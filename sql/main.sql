@@ -1,5 +1,3 @@
--- tablas mínimas: docente, facultad y departamento, periodo, curso, oferta de curso, estudiante, evaluacion docente?
-
 CREATE TABLE Faculty (
     id_faculty INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50) NOT NULL
