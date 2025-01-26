@@ -4,12 +4,13 @@
     height: auto;
     margin: 0 auto;
     padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 200px;
     align-items: center;
 }
 
 .menu {
+    max-width: 600px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,6 +35,10 @@
 .menu__social {
     display: none;
     width: 200px;
+}
+
+.menu__button {
+    justify-self: end;
 }
 
 .menu__button button {
