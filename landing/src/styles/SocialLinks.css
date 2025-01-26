@@ -1,0 +1,13 @@
+.social-links {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    justify-items: center;
+    align-items: center;
+}
+
+.social-links a {
+    width: min-content;
+    height: min-content;
+}

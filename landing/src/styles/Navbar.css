@@ -1,0 +1,54 @@
+.navbar {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    gap: 2rem;
+}
+
+.menu__item {
+    color: var(--text-color-light);
+    display: none;
+}
+
+.menu__item.menu__logo {
+    display: block;
+}
+
+.menu__logo img {
+    width: 12rem;
+    height: auto;
+}
+
+.menu__social {
+    display: none;
+    width: 200px;
+}
+
+.menu__button button {
+    padding: unset;
+    background-color: unset;
+    border-radius: unset;
+}
+
+@media screen and (min-width: 768px) {
+    .menu__item, .menu__social {
+        display: block;
+    }
+
+    .menu__button button {
+        display: none;
+    }
+    
+}

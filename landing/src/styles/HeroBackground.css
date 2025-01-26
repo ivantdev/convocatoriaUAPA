@@ -1,0 +1,74 @@
+.hero-background {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 10rem;
+    padding-top: 0;
+}
+
+.hero-background::after, .hero-background::before {
+    content: '';
+    position: absolute;
+    bottom: -100vh;
+    left: -100%;
+    width: 300%;
+    height: 100vh;
+    background-color: white;
+    transform: rotate(25deg);
+}
+
+.hero-background::before {
+    transform: rotate(-25deg);
+}
+
+@media screen and (min-width: 768px) {
+    .hero-background::before {
+        transform: rotate(-15deg);
+    }
+    .hero-background::after {
+        transform: rotate(15deg);
+    }
+    
+}
+@media screen and (min-width: 1000px) {
+    .hero-background::before {
+        transform: rotate(-5deg);
+    }
+    .hero-background::after {
+        transform: rotate(5deg);
+    }
+    
+}
+
+.hero-background .image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.image-container {
+    width: 100%;
+    height: 100%;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(60%);
+}
+
+.hero-background .image-container::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #222B32;
+    mix-blend-mode: soft-light;
+    opacity: 1;
+    pointer-events: none;
+}

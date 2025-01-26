@@ -1,0 +1,102 @@
+:root {
+    font-family: "Hanken Grotesk", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    --primary: #2091F9;
+    --text-color-primary: #252B42;
+    --text-color-secondary: #374754;
+    --text-color-light: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    font-weight: var(--font-weight);
+    color: var(--text-color-primary);
+    background-color: #FFFFFF;
+    font-size: 62.5%;
+}
+
+body * {
+    font-size: 1rem;
+}
+
+a {
+    color: unset;
+    text-decoration: none;
+}
+
+#root {
+    margin: 0 auto;
+    /* max-width: 1200px; */
+    position: relative;
+}
+
+button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 30px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    color: var(--text-color-light);
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: var(--primary);
+}
+
+h1 {
+    font-size: 3.2rem;
+    text-align: center;
+    font-weight: 350;
+}
+
+.hero-background, .features__section, .contact-us__section, .footer-section {
+    padding: 6rem 1rem;
+}
+
+.features__section, .contact-us__section {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+section {
+    padding: 5rem 0;
+}
+section > p {
+    margin: 0 auto;
+    padding: 2rem 0;
+    max-width: 260px;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 350;
+    color: var(--text-color-secondary);
+}
+
+section > p span {
+    display: none;
+    font-size: 1em;
+}
+
+@media screen and (min-width: 768px) {
+    section > p span {
+        display: inline;
+    }
+    section > p {
+        max-width: 550px;
+    }
+}
