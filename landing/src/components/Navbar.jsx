@@ -1,11 +1,18 @@
+import { useState } from "react";
 import SocialLinks from "@/components/SocialLinks";
 import MenuIcon from "@/icons/MenuIcon";
 import "@/styles/Navbar.css";
 
 function Navbar() {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
+
     return (
         <div className="navbar">
-            <div className="menu">
+            <div className={`menu ${menuOpen ? "open" : ""}`}>
                 <div className="menu__item">
                     <a href="#">Home</a>
                 </div>
@@ -31,8 +38,9 @@ function Navbar() {
             <div className="menu__social">
                 <SocialLinks />
             </div>
+            
             <div className="menu__button">
-                <button>
+                <button onClick={toggleMenu}>
                     <MenuIcon />
                 </button>
             </div>

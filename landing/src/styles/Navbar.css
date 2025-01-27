@@ -1,30 +1,57 @@
 .navbar {
+    position: relative;
     width: 100%;
     max-width: 1200px;
+    max-width: calc(100vw - 2rem);
     height: auto;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 1rem 0;
     display: grid;
     grid-template-columns: 1fr 200px;
-    align-items: center;
 }
 
 .menu {
-    max-width: 600px;
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    width: 100vw;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 0;
+    padding: 3rem 1rem 1.5rem 1rem;
     gap: 2rem;
+}
+
+.menu.open {
+    flex-direction: column;
+    background-color: #000000a9;
 }
 
 .menu__item {
     color: var(--text-color-light);
-    display: none;
+    /* display: none; */
+    order: 2;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s, display;
+}
+
+.open .menu__item {
+    display: unset;
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
 }
 
 .menu__item.menu__logo {
+    width: 100%;
     display: block;
+    order: 1;
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
 }
 
 .menu__logo img {
@@ -34,26 +61,59 @@
 
 .menu__social {
     display: none;
-    width: 200px;
+    width: 100%;
+    min-width: 160px;
+    max-width: 200px;
 }
 
 .menu__button {
     justify-self: end;
+    grid-column: 2 / 3;
 }
 
 .menu__button button {
+    position: relative;
+    z-index: 3;
     padding: unset;
+    margin-top: 2.1rem;
     background-color: unset;
     border-radius: unset;
 }
 
 @media screen and (min-width: 768px) {
+    .navbar {
+        position: unset;
+        align-items: center;
+    }
+
     .menu__item, .menu__social {
         display: block;
+        visibility: visible;
+        opacity: 1;
+        order: unset;
+        transform: none;
     }
 
     .menu__button button {
         display: none;
     }
+
+    .menu {
+        width: 100%;
+        position: unset;
+        padding: 1.5rem 0;
+        gap: 1rem;
+        max-width: 600px;
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .navbar {
+        padding: 1rem 2rem;
+    }
     
+    .menu {
+        gap: 2rem;
+    }
 }
